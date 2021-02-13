@@ -1,0 +1,16 @@
+<div>
+<h1>To-Do</h1>
+<ul role="listview">
+  <% @tasks.each do |task|%>
+    <li>
+    <%= task.completed? ? "☑" : "☐"  %>
+    <%= link_to task.title, task_path(task) %>
+
+    </li>
+  <% end %>
+    <button>
+    <%= link_to "add task", tasks_new_path %>
+  </button>
+</ul>
+
+</div>
